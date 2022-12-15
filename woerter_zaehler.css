@@ -1,0 +1,24 @@
+static void Zaehler(string text)
+{
+    string[] woerter = text.Split(' ');
+    Array.Sort(woerter);    
+    int counter = 1;
+    string check = "";
+    foreach (string W in woerter)
+    {
+        if (W == check)
+        {
+            counter = counter + 1;
+        }
+        else
+        {
+            Console.WriteLine(check + " " + counter.ToString());
+            counter = 1;
+            check = W;
+        }
+    }
+}
+
+Console.Write("Geben Sie einen Text ein: ");
+string text_value = Console.ReadLine();
+Zaehler(text_value);
